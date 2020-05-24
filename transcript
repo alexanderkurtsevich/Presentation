@@ -1,0 +1,44 @@
+React
+Hi! My presentation about React. I chose React because of my interest in what it is, so here I have collected the basic necessary things to understand what React is. I will begin, of course, with the history. 
+React History
+React is a JavaScript library for developing the user interface. React was created by Jordan Valke, a software developer from Facebook. ReactJS started as a JavaScript port of XHP (component HTML framework for PHP) but in XHP was a problem: dynamic web applications require many roundtrips to the server, and XHP did not solve this problem. So, it was decided to create a new tool for creating the UI. And the result is React. React was first used in a Facebook news feed in 2011. Later in the Instagram feed in 2012. And React source code was opened in may 2013.
+Elements
+This code shows the element. Element is the smallest building block of React application. It describe what will be displayed on the screen, and unlike browser DOM elements, React elements are plain objects, and are cheap to create. React elements are immutable. It means once you create an element, you can’t change its children or attributes.
+Rendering Elements
+Usually, when creating a React application, there is only one element in the html code. It is the root one. This is often a div with the root id.
+ To render a React element to the root DOM node, you need to call ReactDOM.render() with the React element and the root DOM node as arguments:
+JSX
+JSX is most often used to create elements in react. JSX is a technology that allows you not to separate HTML markup and JS logic into different files and you can write HTML code in a JS file, but it won't actually be HTML code. This will be all JavaScript. For example an element created this way: 
+will transpiled to this code:
+You can insert any attributes in braces inside a JSX expression:
+JSX is closer to JavaScript than HTML, so React DOM uses the camelCase naming style for properties instead of the usual HTML attribute names. For example, class becomes className, and for becomes forHTML.
+Virtual DOM
+DOM (abbreviation for Document Object Model) is a way to represent a structural document using objects. The problem with a browser DOM is that it is not originally intended for creating a dynamic interface. You can change the DOM using javascript, but this is very resource-intensive.
+React uses the Virtual DOM, a programming concept when a user’s virtual representation of interface is stored in memory and compared to a browser DOM.- Virtual DOM is a copy of the browser DOM and when Virtual DOM changing in any place, React makes the browser DOM identical to Virtual and changes only part which was changed.
+Components
+When creating a react application, it is always split into many components. Each component is a JavaScript function that returns code representing a fragment of a page. There is an example of splitting an application into components. This page splitted on Logo, WordBox, SearchButton, LuckyButton and LanguageNote. 
+Components can be represented as a function and as class components
+A function component is a function that returns the code that will need to be rendered.
+Class component this is class that inherits from React.Component. It should always contain a render () method that will be called every time a component needs to be rendered.  
+These two components are equivalent.
+But the function component should be used when its required ONLY to render some part of the interface, because it consumes less resources, and class, when the component is more complex, for example, it needs access to life cycles. 
+Component names begin with a capital letter. They can be represented as a tag with a slash at the end. This will mean that the tag is opened and closed.
+The advantage of components is that they can be used several times in different places.
+Props
+Props is an abbreviation of properties and it is an object that stores the attributes that are specified when the component is called. It is used to build interactions between parent and child elements, which allows to create user interfaces.
+This attribute will be specified to the component in this.props: 
+It is possible to use the same component several times and set different values in props. So this components with their values will be displayed on the screen. 
+Therefore, if you need to change the properties after render, you must use state.
+State
+this.state is a simple state object that is initialized in the constructor of the class component:
+this.state can be changed and these changes will be tracked. With any changes, react finds them and renders a new interface based on the changed state. 
+To change state, you must use the setState method, which takes an object with modified parameters
+When calling this method, React merge the specified object with this.state. On the basis of it creates a new Virtual DOM and finds which parts of the application should be changed.
+These were all the basic things needed to understand React.
+As a result, the main advantages of the react:
+⦁	Increases application rendering performance
+⦁	Can be rendered oт client and on server
+⦁	JSX increases code readability
+⦁	Easy to integrate with other frameworks.
+⦁	Easy to write unit tests.4
+That's all. The end.
